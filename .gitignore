@@ -1,1 +1,4 @@
 .idea
+www/composer.lock
+www/vendor
+/logs

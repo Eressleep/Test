@@ -1,0 +1,11 @@
+{
+  "name": "test/dom",
+  "autoload": {
+    "psr-4": {
+      "DOM\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=8.0"
+  }
+}

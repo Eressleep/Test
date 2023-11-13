@@ -1,4 +1,4 @@
-FROM phpdockerio/php:8.0-fpm
+FROM phpdockerio/php:8.2-fpm
 
 RUN apt-get update \
     && apt-get -y --no-install-recommends install \
@@ -18,11 +18,11 @@ RUN apt-get update \
     php-pear \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
 
-COPY ./php.ini /etc/php/8.0/fpm/conf.d/90-php.ini
-COPY ./php.ini /etc/php/8.0/cli/conf.d/90-php.ini
+COPY ./php.ini /etc/php/8.2/fpm/conf.d/92-php.ini
+COPY ./php.ini /etc/php/8.2/cli/conf.d/92-php.ini
 
 RUN usermod -u 1000 www-data
 
-WORKDIR "/var/www/bitrix"
+WORKDIR "/var/www"
 
 EXPOSE 9000

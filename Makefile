@@ -5,4 +5,7 @@ down:
 script:
 	docker exec -i php php script.php PATH=${PATH}
 php:
-	docker-compose -it php bash
+	docker exec -it php bash
+setup-composer:
+	docker exec -i php composer update
+setup: up setup-composer
