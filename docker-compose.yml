@@ -1,0 +1,15 @@
+services:
+  php:
+    build: ${PHP_8_0}
+    container_name: php
+    stdin_open: true
+    tty: true
+    volumes:
+      - ${PHP_LOG_LOCAL}:${PHP_LOG_DOCKER}
+      - ${SITE_LOCAL_PATH}:${SITE_DOCKER_PATH}
+    networks:
+      - testdock
+    restart: unless-stopped
+
+networks:
+  testdock:
