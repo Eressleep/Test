@@ -1,4 +1,6 @@
 <?php
 $autoloadPath = __DIR__.'/vendor/autoload.php';
+require_once $autoloadPath;
 
-\DOM\Services\Сonverter\Action::run();
+
+(new \DOM\Services\Сonverter\Action)->run($argv);

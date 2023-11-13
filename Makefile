@@ -3,7 +3,7 @@ up:
 down:
 	docker-compose down
 script:
-	docker exec -i php php script.php PATH=${PATH}
+	docker exec -i php php script.php PATH=input/offices.txt
 php:
 	docker exec -it php bash
 setup-composer:
