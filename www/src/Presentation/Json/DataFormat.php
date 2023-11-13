@@ -3,7 +3,7 @@
 
 namespace DOM\Presentation\Json;
 
-class Json
+class DataFormat
 {
 
 }

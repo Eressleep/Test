@@ -3,7 +3,7 @@
 
 namespace DOM\Presentation\Xml;
 
-class Xml
+class DataFormat
 {
 
 }

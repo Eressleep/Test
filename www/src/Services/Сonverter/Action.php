@@ -3,7 +3,7 @@
 namespace DOM\Services\Сonverter;
 
 
-class Сonverter{
+class Action{
 	public static function run()
 	{
 		print_r(1);
