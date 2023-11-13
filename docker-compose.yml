@@ -1,6 +1,6 @@
 services:
   php:
-    build: ${PHP_8_0}
+    build: ${PHP_8_2}
     container_name: php
     stdin_open: true
     tty: true
