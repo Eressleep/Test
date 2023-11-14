@@ -7,7 +7,7 @@ use DOM\DTO\Input\Data;
 class File
 {
 
-	public static function read(Data $data)
+	public static function read(Data $data) : array
 	{
 		$out = [];
 		$key = 0;

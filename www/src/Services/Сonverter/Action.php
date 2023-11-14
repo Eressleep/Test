@@ -10,7 +10,12 @@ use DOM\Validators\CheckInputParam;
 
 class Action
 {
-	public function run(array $data)
+	/**
+	 * @param array $data
+	 *
+	 * @return void
+	 */
+	public function run(array $data) : void
 	{
 		try {
 			$this->prepareData($data);
@@ -19,7 +24,7 @@ class Action
 		}
 	}
 
-	private function prepareData(array $data) {
+	private function prepareData(array $data) : void {
 		$out = CheckInputParam::checkKey($data);
 		if(CheckFile::findFile($out))
 		{

@@ -32,7 +32,12 @@ trait AddressTraits
 		return $out;
 	}
 
-	private function generateAddressArrayXml(string $address) {
+	/**
+	 * @param string $address
+	 *
+	 * @return string[]
+	 */
+	private function generateAddressArrayXml(string $address) : array {
 		$out =  explode('офис', $address);
 		if(count($out) == 2){
 			$out[1] = 'офис '. $out[1];

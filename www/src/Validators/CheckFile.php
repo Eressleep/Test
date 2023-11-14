@@ -3,10 +3,15 @@
 namespace DOM\Validators;
 use DOM\DTO\Input\Data;
 use DOM\Exceptions\FileNotFound;
-use DOM\Exceptions\KeyNotFound;
 
 class CheckFile{
-	public static function findFile(Data $data)
+	/**
+	 * @param Data $data
+	 *
+	 * @return true
+	 * @throws FileNotFound
+	 */
+	public static function findFile(Data $data) : bool
 	{
 		if(!file_exists($data->path))
 			throw new FileNotFound();

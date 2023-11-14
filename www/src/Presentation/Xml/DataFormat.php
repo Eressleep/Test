@@ -7,7 +7,6 @@ use DOM\Helpers\AddressTraits;
 use DOM\Helpers\PhoneTraits;
 use DOM\Presentation\Interface;
 use LaLit\Array2XML;
-use LaLit\XML2Array;
 
 class DataFormat implements Interface\InterfaceAdapter
 {
@@ -22,7 +21,11 @@ class DataFormat implements Interface\InterfaceAdapter
 		$this->report = $report;
 	}
 
-	public function getData()
+	/**
+	 * @return string
+	 * @throws \Exception
+	 */
+	public function getData() : string
 	{
 		$out = [];
 		foreach ($this->report as $key => $item) {

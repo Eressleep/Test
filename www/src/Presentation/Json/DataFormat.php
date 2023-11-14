@@ -10,7 +10,7 @@ use DOM\Presentation\Interface;
 class DataFormat implements Interface\InterfaceAdapter
 {
 	use PhoneTraits, AddressTraits;
-	private $report;
+	protected $report;
 
 	const TYPE = 'office';
 

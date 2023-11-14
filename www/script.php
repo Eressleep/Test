@@ -1,6 +1,11 @@
 <?php
+
+use DOM\Services\Сonverter\Action;
+
 $autoloadPath = __DIR__.'/vendor/autoload.php';
 require_once $autoloadPath;
-
-
-(new \DOM\Services\Сonverter\Action)->run($argv);
+echo '<pre>';
+print_r($argv);
+echo '</pre>';
+exit();
+(new Action)->run($argv);

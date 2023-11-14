@@ -9,13 +9,12 @@ class Input{
 	{
 
 		$data = $this->separeteData($data);
-		$out = array_map(fn($item) => new Data(
+		return array_map(fn($item) => new Data(
 			id     : trim($item[0][1]),
 			name   : trim($item[1][1]),
 			address: trim($item[2][1]),
 			phone  : trim($item[3][1])
 		), $data);
-		return $out;
 	}
 
 	private function separeteData(array $data) : array{
