@@ -2,3 +2,4 @@
 www/composer.lock
 www/vendor
 /logs
+www/output

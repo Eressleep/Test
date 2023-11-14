@@ -6,6 +6,7 @@
     }
   },
   "require": {
-    "php": ">=8.0"
+    "php": ">=8.0",
+    "digitickets/lalit": "^3.3"
   }
 }
