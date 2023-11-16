@@ -10,6 +10,25 @@ use DOM\Validators\CheckInputParam;
 
 class Action
 {
+	protected static $instance;
+
+	public function __construct() {}
+
+	private function __clone(): void {}
+
+	/**
+	 * @return void
+	 */
+	private function __wakeup(): void {}
+
+	public static function getInstance()
+	{
+		if(is_null(self::$instance)){
+			self::$instance = new self();
+		}
+		return self::$instance;
+	}
+
 	/**
 	 * @param array $data
 	 *
