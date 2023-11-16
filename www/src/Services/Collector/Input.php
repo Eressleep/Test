@@ -7,14 +7,12 @@ class Input{
 
 	public function createFormData(array $data) : array
 	{
-
-		$data = $this->separeteData($data);
 		return array_map(fn($item) => new Data(
-			id     : trim($item[0][1]),
-			name   : trim($item[1][1]),
-			address: trim($item[2][1]),
-			phone  : trim($item[3][1])
-		), $data);
+			id     : $item[0][1],
+			name   : $item[1][1],
+			address: $item[2][1],
+			phone  : $item[3][1]
+		), $this->separeteData($data));
 	}
 
 	private function separeteData(array $data) : array{
@@ -22,11 +20,12 @@ class Input{
 		{
 			foreach ($item as &$value)
 			{
-				$value = explode(':', $value);
+				$value = array_map(
+					fn($item) => trim($item), explode(':', $value),
+					                          explode(':', $value)
+				);
 			}
 		}
 		return $data;
 	}
-
-
 }
