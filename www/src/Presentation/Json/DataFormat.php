@@ -34,7 +34,7 @@ class DataFormat implements Interface\InterfaceAdapter
 			];
 		}
 		$answer['data'] = $out;
-		return json_encode($answer);
+		return json_encode($answer, JSON_UNESCAPED_UNICODE);
 	}
 
 
