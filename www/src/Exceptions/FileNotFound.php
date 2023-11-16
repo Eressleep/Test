@@ -1,10 +1,9 @@
 <?php
 
 namespace DOM\Exceptions;
-use Exception;
 use Throwable;
 
-class FileNotFound extends Exception
+class FileNotFound extends GeneralException
 {
 	public function __construct(?Throwable $previous = null)
 	{

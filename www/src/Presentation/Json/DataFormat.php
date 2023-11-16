@@ -14,20 +14,16 @@ class DataFormat extends Data implements Interface\InterfaceAdapter
 
 	public function getData() : string
 	{
-		$out = [];
-		foreach ($this->report as $item) {
-			$out[] = [
-				'type'       => self::officeType,
-				'id'         => $item->id,
-				'attributes' => [
-					'name'    => $item->name,
-					'address' => $this->generateAddressArray($item->address),
-					'phone'   => $this->generatePhoneArray($item->phone),
-				],
-			];
-		}
-		$answer['data'] = $out;
-		return json_encode($answer, JSON_UNESCAPED_UNICODE);
+		$out['data'] = array_map(fn($item) => [
+			'type'       => self::officeType,
+			'id'         => $item->id,
+			'attributes' => [
+				'name'    => $item->name,
+				'address' => $this->generateAddressArray($item->address),
+				'phone'   => $this->generatePhoneArray($item->phone),
+			],
+		], $this->report);
+		return json_encode($out, JSON_UNESCAPED_UNICODE);
 	}
 
 

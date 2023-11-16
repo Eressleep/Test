@@ -1,10 +1,9 @@
 <?php
 
 namespace DOM\Exceptions;
-use Exception;
 use Throwable;
 
-class KeyNotFound extends Exception
+class KeyNotFound extends GeneralException
 {
 	public function __construct(?Throwable $previous = null)
 	{
