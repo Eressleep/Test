@@ -2,14 +2,20 @@
 
 namespace DOM\Services\Сonverter;
 
+use DOM\Patterns\Singleton;
 use DOM\Presentation\Json\DataFormat;
 use DOM\Services\Collector\Input;
 use DOM\Services\Reader\File;
 use DOM\Validators\CheckFile;
 use DOM\Validators\CheckInputParam;
 
-class Action
+class Action extends Singleton
 {
+	protected static $instance;
+
+	const XMLFile = 'text.xml';
+	const JsonFile = 'text.json';
+
 	/**
 	 * @param array $data
 	 *
@@ -31,10 +37,9 @@ class Action
 			$data = (new Input())->createFormData(File::read($out));
 			$json = (new DataFormat($data))->getData();
 			$xml = (new \DOM\Presentation\Xml\DataFormat($data))->getData();
-			\DOM\Services\Save\File::save($json, 'text.json');
-			\DOM\Services\Save\File::save($xml, 'text.xml');
+			\DOM\Services\Save\File::save($json, self::JsonFile);
+			\DOM\Services\Save\File::save($xml, self::XMLFile);
 		}
 	}
-
 
 }
