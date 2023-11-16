@@ -2,35 +2,19 @@
 
 namespace DOM\Services\Сonverter;
 
+use DOM\Patterns\Singleton;
 use DOM\Presentation\Json\DataFormat;
 use DOM\Services\Collector\Input;
 use DOM\Services\Reader\File;
 use DOM\Validators\CheckFile;
 use DOM\Validators\CheckInputParam;
 
-class Action
+class Action extends Singleton
 {
 	protected static $instance;
 
 	const XMLFile = 'text.xml';
 	const JsonFile = 'text.json';
-
-	public function __construct() {}
-
-	private function __clone(): void {}
-
-	/**
-	 * @return void
-	 */
-	private function __wakeup(): void {}
-
-	public static function getInstance()
-	{
-		if(is_null(self::$instance)){
-			self::$instance = new self();
-		}
-		return self::$instance;
-	}
 
 	/**
 	 * @param array $data
@@ -57,6 +41,5 @@ class Action
 			\DOM\Services\Save\File::save($xml, self::XMLFile);
 		}
 	}
-
 
 }
