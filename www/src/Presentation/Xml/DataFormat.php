@@ -5,24 +5,15 @@ namespace DOM\Presentation\Xml;
 
 use DOM\Helpers\AddressTraits;
 use DOM\Helpers\PhoneTraits;
+use DOM\Presentation\Abstract\Data;
 use DOM\Presentation\Interface;
 use LaLit\Array2XML;
 
-class DataFormat implements Interface\InterfaceAdapter
+class DataFormat extends Data implements Interface\InterfaceAdapter
 {
 	use PhoneTraits, AddressTraits;
 
-	private $report;
-
-	const phoneType = 'phone';
-
-	public function __construct($report)
-	{
-		$this->report = $report;
-	}
-
 	/**
-	 * @return string
 	 * @throws \Exception
 	 */
 	public function getData() : string
