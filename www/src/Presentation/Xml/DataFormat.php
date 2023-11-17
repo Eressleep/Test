@@ -16,7 +16,7 @@ class DataFormat extends Data implements Interface\InterfaceAdapter
 	/**
 	 * @throws \Exception
 	 */
-	public function getData() : string
+	public function getData(): string
 	{
 		$out = [];
 		foreach ($this->report as $key => $item) {
@@ -36,6 +36,12 @@ class DataFormat extends Data implements Interface\InterfaceAdapter
 					'@value' => $this->phoneFormat($item->phone),
 				],
 			];
+			$out['company'][$key]['address'] = [
+				'@attributes' => [
+					'lang' => 'ru',
+				],
+				'@value'      => $address[0],
+			];
 
 			if (count($address) == 2) {
 				$out['company'][$key]['address-add'] = [
@@ -46,7 +52,6 @@ class DataFormat extends Data implements Interface\InterfaceAdapter
 				];
 			}
 		}
-
 		return Array2XML::createXML(
 			'companies',
 			$out
